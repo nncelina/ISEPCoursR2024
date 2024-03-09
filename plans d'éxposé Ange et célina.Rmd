@@ -1,0 +1,27 @@
+---
+title: "Plans de travail"
+author: ' Rayan et Célina '
+date: "`r Sys.Date()`"
+output:
+  pdf_document: default
+  word_document: default
+subtitle: ISEP2-2024
+---
+
+# PLAN DE TRAVAILLE D'EXPOSE
+
+## INTRODUCTION
+
+## I-Définition et compréhension des concepts
+
+###          1-définition et compréhension de ANOVA
+
+###          2-Définition et compréhension des test non paramétrique
+
+## II-ANOVA et test non paramétriques dans R
+
+###       1-ANOVA dans R
+
+###       2-Test non paramétriques dans R
+
+# CONCLUSION

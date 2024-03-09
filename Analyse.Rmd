@@ -1,0 +1,115 @@
+---
+title: "Analyse"
+author: "Célina"
+date: "08/03/2024"
+output:
+  word_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+library(readxl)
+Bases <- read_excel("C:\\Users\\CELINA\\Desktop\\Base.xlsx")
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+# Analyse statistique descriptive
+
+## Introduction
+
+Ce rapport présente une analyse statistique descriptive des données de la base de données. Nous examinerons les caractéristiques des variables numériques et catégorielles, ainsi que les relations potentielles entre certaines variables.
+
+##    Résumé des variables
+
+###         Variables numériques
+
+####            Âge
+
+Le tableau ci-dessous présente un résumé de la variable `âge` :
+
+
+```{r Bases, echo=TRUE}
+summary(Bases$Âge)
+```
+
+
+####            Moyenne
+
+Le tableau ci-dessous présente un résumé de la variable `moyenne` :
+  
+```{r echo=TRUE}
+summary(Bases$Moyenne)
+```
+
+###         Variables catégorielles
+
+Les tableaux ci-dessous présentent les fréquences des variables catégorielles :
+
+####            Variable Classe 
+```{r}
+table(Bases$Classe)
+```
+
+####            Variable Pays
+```{r}
+table(Bases$Pays)
+```
+
+####            Variable Ville
+```{r}
+table(Bases$Ville)
+```
+
+####            Variable Ethnie
+```{r}
+table(Bases$Ethnie)
+```
+
+####            Variable Boursier
+```{r}
+table(Bases$Boursier)
+```
+
+####            Variable Riche
+```{r}
+table(Bases$Riche)
+```
+
+####            Variable Malade
+```{r}
+table(Bases$Malade)
+```
+
+####            Variable Voyage
+```{r}
+table(Bases$Voyage)
+```
+
+####            Variable Apte
+```{r}
+table(Bases$Apte)
+```
+
+##    Tests du khi-deux
+
+###         Relation entre la moyenne et le pays
+
+Nous avons effectué un test du khi-deux pour examiner la relation entre la moyenne et le pays :
+  
+```{r}
+resultat_test_moyenne_pays <- chisq.test(Bases$Moyenne, Bases$Pays)
+resultat_test_moyenne_pays
+```
+
+###         Relation entre la variable apte et la situation matrimoniale
+
+Nous avons également effectué un test du khi-deux pour examiner la relation entre la variable `apte` et riche :
+
+```{r}
+resultat_test_apte_situation_matrimoniale <- chisq.test(Bases$Apte, Bases$Riche)
+resultat_test_apte_situation_matrimoniale
+```
+
+##    Conclusion
+
+L'analyse statistique descriptive des données révèle des informations intéressantes sur les caractéristiques de notre échantillon. Les tests du khi-deux suggèrent qu'il existe des relations significatives entre certaines variables, ce qui pourrait être exploré plus en détail dans des analyses futures.
